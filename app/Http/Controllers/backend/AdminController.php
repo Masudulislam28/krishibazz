@@ -78,5 +78,15 @@ class AdminController extends Controller
 
     }
 
+    public function adminmyincome()
+    {
+
+        $orders  = Order::all();
+
+         
+ 
+         return view('Admin.myincome',compact('orders'));
+    }
+
 
 }

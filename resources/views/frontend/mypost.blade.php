@@ -16,7 +16,7 @@
                                 <p class="card-text">{{$data->product_name}}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a  type="button" class="btn btn-sm btn-outline-secondary" href="{{route('view.details',$data->id)}}" >View </a>
+                                        <a  type="button" class="btn btn-sm btn-outline-secondary" href="{{route('farmerview.details',$data->id)}}" >View </a>
                                         <a  type="button" class="btn btn-sm btn-outline-secondary" href="{{route('my.postdelete',$data->id)}}" >Delete </a>
                                        
                                     </div>

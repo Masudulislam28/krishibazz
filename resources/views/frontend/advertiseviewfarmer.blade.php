@@ -211,8 +211,6 @@ img {
 						</div>
 						<p class="product-description"></p>
 						<h4 class="category">Crop Category: {{$product->category}} <span></span></h4>
-						<h4 class="category">Farmer Name: {{$product->name}} <span></span></h4>
-						<h4 class="category">Contact NO: {{$product->contact_no}} <span></span></h4>
 						<p class="name">Product Name: {{$product->product_name}} </p>
 						<p class="details">Product description: {{$product->details}}<span></span>  </p>
 						<p class="quantity">quantity: {{$product->quantity}} KG<span></span>  </p>
@@ -221,8 +219,8 @@ img {
 						
 						<div class="action">
 						
-
-							<a  class="btn btn-default" href="{{route('advertise.view')}}" type="button">GO Back </a>
+							
+							<a  class="btn btn-default" href="{{route('my.post')}}" type="button">GO Back </a>
               
 						</div>
 					</div>

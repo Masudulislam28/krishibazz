@@ -50,9 +50,21 @@ class wholesellerController extends Controller
     
       $orders->save();
 
-      return redirect()->back()->with('message','Order Placed Successfully');
+      return redirect(route('advertise.view'))->with('message','Order Placed Successfully');
 
     }
+
+
+
+    public function viewmytransaction()
+
+    {
+
+        $orders = Order::where('buyer_id',auth()->user()->id)->get();
+        return view ('frontend.wholeseller.mytransaction',compact('orders'));
+
+    }
+
 
 
 }

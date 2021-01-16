@@ -95,6 +95,16 @@
 </li>
 
 <li class="nav-item">
+    <a class="nav-link collapsed" href="{{route('admin.myincome')}}" >
+        
+        <i class="fas fa-fw fa-cog"></i>
+        <span>My Income</span>
+    </a>
+   
+     
+</li>
+
+<li class="nav-item">
     <a class="nav-link collapsed" href="{{route('admin.logout')}}" >
         
         <i class="fas fa-fw fa-cog"></i>

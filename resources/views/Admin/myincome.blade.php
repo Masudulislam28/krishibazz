@@ -10,7 +10,7 @@
           @endif
         <h2 >
 
-        All Transaction
+        All Registered user
         <span style="color:green ">{{$orders->count()}}</span>
 
         </h2>
@@ -21,13 +21,9 @@
                 <th>Farmer ID</th>
                 <th>Wholeseller ID</th>
                 <th>Post ID</th>
-                <th>Quantity(KG)</th>
-                <th>Price(BDT PER KG)</th>
-                <th>Total Price (BDT)</th>
-                <th>Payment Method</th>
-                <th>Transaction fee (BDT)</th>
-                <th>Send from</th>
-                <th>Action</th>
+                <th>My profit</th>
+              
+                
             
             
             </tr>
@@ -40,19 +36,9 @@
                     <td>{{$order->sells_id}}</td>
                     <td>{{$order->buyer_id}}</td>
                     <td>{{$order->post_id}}</td>
-                    <td>{{$order->quantity}} KG</td>
-                    <td>{{$order->price}} BDT</td>
-                    <td>{{$order->total_price}} BDT</td>
-                    <td>{{$order->payment_method}}</td>
                     <td>{{$order->transaction_fee}} BDT</td>
-                    <td>{{$order->send_from}}</td>
-                    <td>
-                    
-                    
-                    <a href="{{route('transaction.delete',$order->id)}}" class="btn btn-danger">Delete</a>
-                    
-                    
-                    </td>
+                  
+                  
                     
                     
                     </tr>

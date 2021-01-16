@@ -15,22 +15,55 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
+
         <li class="{{ Route::currentRouteName() ==  'home' ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
           <li class="{{ Route::currentRouteName() ==  'about.us' ? 'active' : '' }}">@guest<a href="#">About Us</a>@endguest</li>
-          
           <li><a href="#">Training</a></li>
+
           
-          <li>@guest<a href="#">Contact Us</a>@endguest</li>
+        @auth()
+        @if(auth()->user()->user_type  == 'Farmer')
+
         
           
-          <li class="book-a-table text-center"> @auth <a href="{{route('my.post')}}">My Posts</a>@endauth</li>
-
-          <li class="book-a-table text-center"> @auth <a href="{{route('farmer.post')}}">Create Post</a>@endauth</li>
+        
           
-          <li class="book-a-table text-center">@auth<a href="{{route('advertise.view')}}">View All Post</a>@endauth</li>
+        <li class="book-a-table text-center"> @auth <a href="{{route('my.post')}}">My Posts</a>@endauth</li>
 
-          <li class="book-a-table text-center">@auth<a href="{{route('view.sellrequest')}}">View sell request</a>@endauth</li>
-         
+        <li class="book-a-table text-center"> @auth <a href="{{route('farmer.post')}}">Create Post</a>@endauth</li>
+
+        <li class="book-a-table text-center">@auth<a href="{{route('view.sellrequest')}}">View sell request</a>@endauth</li>
+
+
+
+
+
+        @elseif(auth()->user()->user_type  == 'Wholeseller')
+
+        
+          
+          
+        <li class="book-a-table text-center"><a href="{{route('advertise.view')}}">View All Post</a></li>
+        <li class="book-a-table text-center"><a href="{{route('view.mytransaction')}}">My transaction</a></li>
+
+        @else
+
+        
+        @endif
+        @endauth
+
+        
+        
+        
+          
+          
+          
+          
+        
+        
+          
+          
+       
         
         <li >
        

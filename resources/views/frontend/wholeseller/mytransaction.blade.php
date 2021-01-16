@@ -10,7 +10,7 @@
           @endif
         <h2 >
 
-        All Wholeseller Order
+        My Transaction
         <span style="color:green ">{{$orders->count()}}</span>
 
         </h2>
@@ -18,15 +18,14 @@
         <thead>
             <tr>
                 <th>Sl</th>
-                <th>Quantity(Kg)</th>
-                <th>Price(BDT per KG)</th>
+                
                 <th>Total Price(BDT)</th>
                 <th>Payment Method</th>
                 <th>Transaction fee(BDT)</th>
                 <th>Send from</th>
                 <th>Status</th>
                 <th>Created At</th>
-                <th>Action</th>
+               
             
             
             </tr>
@@ -35,8 +34,6 @@
 
                     <tr>
                          <td>{{ $key + 1}}</td>
-                         <td>{{$order->quantity}} KG</td>
-                         <td>{{$order->price}} BDT PER KG</td>
                          <td>{{$order->total_price}} BDT</td>
                          <td>{{$order->payment_method}}</td>
                          <td>{{$order->transaction_fee}} BDT</td>
@@ -56,19 +53,7 @@
                          </td>
 
                          <td>{{$order->created_at}}</td>
-                         <td>
-                         <a href="{{route('approve.request',$order->id)}}" class="btn btn-success waves-effect">
-                         <i class="material-icons"> approve</i>
                          
-                         </a>
-
-                         <a href="{{route('reject.request',$order->id)}}" class="btn btn-danger waves-effect">
-                         <i class="material-icons"> reject</i>
-                         
-                         </a>
-                         
-                         
-                         </td>
 
                  </tr>
                     @endforeach

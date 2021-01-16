@@ -73,7 +73,8 @@ class FarmerController extends Controller
      public function viewadvertise()
 
      { 
-         $posts=Advertisement::paginate(10);
+
+         $posts=Advertisement::where('status','0')->paginate(10);
          return view('farmer.createadvertise',compact('posts'));
      }
 
@@ -83,6 +84,14 @@ class FarmerController extends Controller
         $product= Advertisement::find($id);
        
         return view('frontend.advertiseview',compact('product'));
+
+     }
+     
+     public function farmerviewdetails($id)
+
+     {
+        $product= Advertisement::find($id);
+        return view('frontend.advertiseviewfarmer',compact('product'));
 
      }
       
@@ -122,11 +131,14 @@ class FarmerController extends Controller
 
         $order = Order::find($id);
 
+        $post= Advertisement::find($order->post_id);
+            
         if($order->is_approved == false)
         {
             $order->is_approved = true;
             $order->save();
-
+            $post->status= true;
+            $post->save();
             return redirect()->back()->with('message','Order successfully approved');
 
         }
@@ -141,7 +153,7 @@ class FarmerController extends Controller
      public function rejectrequest($id)
      {
         Order::find($id)->delete();
-        return redirect()->back()->with('message','Order rejected successfully');    
+        return redirect()->back()->with('message','Order deleted successfully');    
 
      }
 

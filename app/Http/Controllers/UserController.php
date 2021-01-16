@@ -90,6 +90,8 @@ class UserController extends Controller
      Public function viewProfile()
      {
         
+       
+      
          return view('frontend.profile.view');
          
      }

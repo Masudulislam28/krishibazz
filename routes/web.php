@@ -121,6 +121,9 @@ Route::get('manage/transaction',[AdminController::class,'managetransaction'])->n
 
 Route::get('transaction/delete/{id}',[AdminController::class,'transactiondelete'])->name('transaction.delete');
 
+//admin My income
+
+Route::get('admin/my/income',[AdminController::class,'adminmyincome'])->name('admin.myincome');
 
 
 
@@ -168,6 +171,7 @@ Route::group(['namespace'=>'Frontend'],function()
  Route::get('my/post',[FrontendFarmer::class,'myPost'])->name('my.post');
  Route::get('my/post/delete/{id}',[FrontendFarmer::class,'myPostdelete'])->name('my.postdelete');
 
+
  Route::get('view/sell/request',[FrontendFarmer::class,'viewsellrequest'])->name('view.sellrequest');
  Route::get('/approve/sell/request/{id}',[FrontendFarmer::class,'approverequest'])->name('approve.request');
  Route::get('/reject/sell/request/{id}',[FrontendFarmer::class,'rejectrequest'])->name('reject.request');
@@ -178,6 +182,7 @@ Route::group(['namespace'=>'Frontend'],function()
  //view product details
 
  Route::get('view/details/{id}',[FrontendFarmer::class,'viewDetails'])->name('view.details');
+ Route::get('farmerview/details/{id}',[FrontendFarmer::class,'farmerviewdetails'])->name('farmerview.details');
 
  
  
@@ -193,6 +198,11 @@ Route::group(['namespace'=>'Frontend'],function()
  Route::get('checkout/form/{id}',[FrontendWholeseller::class,'checkoutForm'])->name('checkout.form');
 
  Route::post('place/order/{id}',[FrontendWholeseller::class,'placeOrder'])->name('place.order');
+
+
+//My transaction(wholeseller)
+
+Route::get('view/my/transaction',[FrontendWholeseller::class,'viewmytransaction'])->name('view.mytransaction');
 
 }
 );

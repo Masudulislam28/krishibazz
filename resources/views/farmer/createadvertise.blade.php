@@ -4,6 +4,9 @@
 
 <div class="album py-5 bg-light">
         <div class="container">
+        @if(Session::has('message'))
+    <div class="alert alert-success"> {{ Session::get('message') }}</div>
+  @endif
 
             <div class="row row-cols-md-3">
                 @foreach($posts as $data)
@@ -16,10 +19,10 @@
                                 <p class="card-text">{{$data->product_name}}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a  type="button" class="btn btn-sm btn-outline-secondary" href="{{route('view.details',$data->id)}}" >View </a>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Show Farmer Number</button>
+                                        <a  type="button" class="btn btn-sm btn-outline-secondary" href="{{route('view.details',$data->id)}}">View </a>
+                                        <a type="button" class="btn btn-sm btn-outline-secondary" href="{{route('checkout.form',$data->id)}}">Interested</a>
                                     </div>
-                                    <small class="text-muted">{{$data->price}} BDT Per Kg</small>
+                                    <small class="text-muted">{{$data->price}} BDT PER KG</small>
                                 </div>
                             </div>
                         </div>

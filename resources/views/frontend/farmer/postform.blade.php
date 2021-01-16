@@ -99,13 +99,13 @@
   </div>   
 
  <div class="form-group">
-    <label for="quantity">Quantity</label>
+    <label for="quantity">Quantity(KG)</label>
     <input name="quantity" placeholder="Enter total Quantity in kg" type="number" cols="30" rows="5" class="form-control" id="quantity" aria-describedby="emailHelp">
    
   </div>
   <div class="form-group">
-    <label for="price">Price</label>
-    <input name="price" placeholder="Price per kg" type="number" cols="30" rows="5" class="form-control" id="price" aria-describedby="emailHelp">
+    <label for="price">Price(BDT PER KG)</label>
+    <input name="price" min="0" oninput="validity.valid||(value='');" placeholder="Price per kg" type="number" cols="30" rows="5" class="form-control" id="price" aria-describedby="emailHelp">
    
   </div>
   <div class="form-group">
